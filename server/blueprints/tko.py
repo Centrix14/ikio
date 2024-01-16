@@ -47,4 +47,4 @@ def add_tko():
                     'area_owner', 'stead_owner'])
 
     print(features)
-    return "ok"
+    return jsonify({'message': 'Успешно!', 'status': True})
