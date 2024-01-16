@@ -36,3 +36,15 @@ def get_all_tko():
 
     response = {"data": data, "message": "Успешно!", "status": True}
     return jsonify(response)
+
+@tko_bp.route('/add_tko', methods=['POST'])
+def add_tko():
+    post_data = request.get_json()
+    features = map(lambda feature: post_data.get(feature),
+                   ['id_area', 'area_type', 'id_bid', 'bid_date',
+                    'area_kind', 'area_status', 'cover_material',
+                    'coords', 'address', 'square', 'is_border',
+                    'area_owner', 'stead_owner'])
+
+    print(features)
+    return "ok"
